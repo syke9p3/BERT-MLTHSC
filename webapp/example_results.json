@@ -1,0 +1,29 @@
+{
+    "labels": [
+        {
+            "name": "Age",
+            "probability": "95%"
+        },
+        {
+            "name": "Gender",
+            "probability": "84%"
+        },
+        {
+            "name": "Physical",
+            "probability": "73%"
+        },
+        {
+            "name": "Race",
+            "probability": "32%"
+        },
+        {
+            "name": "Religion",
+            "probability": "0.04%"
+        },
+        {
+            "name": "Others",
+            "probability": "11%"
+        }
+    ],
+    "text": "Ang papanget ng mga batang lalaki sa kanto"
+}

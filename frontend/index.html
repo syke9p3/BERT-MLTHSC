@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Create an input element with type="text" and id="input-el" -->
+    <!-- Create a SAVE INPUT button with id="analyze-btn" -->
+
+    <header>
+        <nav class="flex">
+            <div class="logo"><i class='bx bxs-balloon bx-sm'></i>
+                <h2 class="logo-name">mlthsc.</h2>
+            </div>
+            <ul class="nav-list flex">
+                <i class='bx bx-menu bx-sm'></i>
+                <!-- <li class="nav-item">Home</li>
+                <li class="nav-item">About</li>
+                <li class="nav-item">Dataset</li> -->
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <main class="container bg-white ">
+
+        <div class="banner">
+            <div class="fixed text-center">
+                <h1 class="banner-title">Multilabel Tagalog Hate Speech Classifier</h1>
+                <p class="text-secondary">Enter the hate speech in the text box below, press the "Analyze" button to
+                    classify the
+                    post according to its targets.</p>
+            </div>
+        </div>
+
+        <div class="text-center banner">
+            <h3>Enter Hate Speech Post</h3>
+            <!-- <p class="text-secondary">Enter the hate speech in the text box below, press the "Analyze" button to
+                classify the
+                post according to its targets.</p> -->
+        </div>
+        <section class="input-set border">
+            <div class="flex tabs">
+                <button class="btn tab active">Input Post</button>
+                <button class="btn tab">Get Tweet</button>
+            </div>
+            <textarea type="text" id="input-text" placeholder="Enter text" value=""></textarea>
+            <div class="btn-group flex">
+                <button id="analyze-btn" class="btn btn-primary">Analyze <i class='bx bxs-send'></i></button>
+                <button id="clear-btn" class="btn btn-secondary">Clear</button>
+            </div>
+
+            <section>
+                <div class="flex justify-between align-center section-header">
+                    <h3>Labels</h3>
+                    <button id="save-btn" class="btn btn-tertiary"><i class='bx bxs-save bx-xs'></i> Save</button>
+                </div>
+                <div class="labels-container" id="labels-container">
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Age
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Gender
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Physical
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Race
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Religion
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Others
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="settings-container">
+                    <div class="settings-item ">
+                        <input type="checkbox" name="settings-1" id="settings-1">
+                        <label for="settings-1">Hide labels below 50%</label>
+                    </div>
+                </div> -->
+            </section>
+        </section>
+    </main>
+
+
+    <section id="saved-post" class="container">
+        <div class="section-header">
+            <h3>Saved Posts</h3>
+            <ul id="list"></ul>
+        </div>
+    </section>
+
+    <footer>
+        Copyright 2023
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

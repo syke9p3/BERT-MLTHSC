@@ -289,7 +289,6 @@ if __name__ == '__main__':
 
     logger = TensorBoardLogger("lightning_logs", name="hate-speech")
 
-
     trainer = pl.Trainer(max_epochs=config['n_epochs'], num_sanity_val_steps=2, log_every_n_steps=5)
     trainer.fit(model, mlths_data_module)
 

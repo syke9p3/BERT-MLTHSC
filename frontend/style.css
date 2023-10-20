@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+
+    /* base colors */
+    --white: #FFFFFF;
+    --black: #202020;
+    --gray-25: #80808040;
+    --accent: #1ad6ba;
+
+    /* labels */
+    /* --out-age: #fe5555;
+    --in-age: #DC2626;
+    --out-gender: #f09f2e;
+    --in-gender: #EA580C;
+    --out-physical: #e9dc27;
+    --in-physical: #d5b903;
+    --out-race: #2bce9a;
+    --in-race: #16a38b;
+    --out-religion: #424bfc;
+    --in-religion: #0f3a97;
+    --out-other: #7f8387;
+    --in-other: #3f3b3b; */
+
+    /* labels */
+    --out-age: #fe5555;
+    --in-age: #DC2626;
+    --out-gender: #f09f2e;
+    --in-gender: #EA580C;
+    --out-physical: #e9dc27;
+    --in-physical: #d5b903;
+    --out-race: #2bce9a;
+    --in-race: #16a38b;
+    --out-religion: #424bfc;
+    --in-religion: #0f3a97;
+    --out-other: #7f8387;
+    --in-other: #3f3b3b;
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    color: #202020;
+    font-size: 14px;
+    background-image: linear-gradient(180deg, white, rgb(230, 236, 247));
+}
+
+.text-secondary {
+    color: #434242;
+    font-size: 12px;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 36px;
+
+}
+
+.header {
+    background-color: #005BB4;
+    margin-bottom: 2px;
+
+}
+
+.fixed {
+    margin: 0;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+
+.align-center {
+    align-items: center;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 1rem;
+    
+}
+
+p {
+    line-height: 1.6;
+    font-size: 14;
+}
+
+
+/*
+
+Style our app according to the provided design!
+
+green color -> #5f9341
+
+*/
+
+.container {
+    /* box-shadow: 0 2px 16px #999da025; */
+    margin: 0 auto;
+    max-width: 600px;
+
+
+}
+
+.border {
+    border: 1px solid #20202020;
+    border-radius: 8px;
+}
+
+
+
+.bg-white {
+    background-color: white;
+}
+
+
+
+.gap-1 {
+    gap: 8px;
+}
+
+header {
+    border-bottom: 1px solid var(--gray-25);
+}
+
+nav {
+    padding: 1rem 5%;
+    /* background-color: rgb(218, 218, 218); */
+    justify-content: space-between;
+    align-items: center;
+}
+
+i {
+    color: black;
+}
+
+.logo {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+}
+
+.logo-name {
+    letter-spacing: -1.5;
+}
+
+.logo i {
+    color: var(--accent);
+}
+
+nav ul {
+    gap: 1rem;
+}
+
+.input-set {
+    margin-bottom: 24px;
+    padding: 0 8px 16px 8px;
+}
+
+/* Components */
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #ebeff5;
+    border-radius: 0px;
+    margin-bottom: 4px;
+    margin-bottom: 12px;
+    height: 100px;
+    resize: vertical;
+    min-height: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    /* height: 36px; */
+    background-color: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-group {
+    gap: 4px;
+}
+
+.btn i {
+    color: inherit;
+}
+
+.btn-primary {
+    background: var(--black);
+    color: var(--accent);
+}
+
+.btn-tertiary {
+    color: var(--accent);
+    background-color: #FFFFFF;
+    transition: all 300ms ease;
+    padding: 8px 12px;
+    border: 1px solid var(--accent);
+}
+
+.btn:hover {
+    opacity: 75%;
+}
+
+
+
+.tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.tab {
+    border-radius: 0;
+    background-color: white;
+}
+
+.tab.active {
+    border-bottom: 3px solid var(--black);
+}
+
+input[type="checkbox"] {
+    scale: 1.5;
+    margin-right: 4px;
+}
+
+
+
+
+/* Element Reset */
+
+label {
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+    color: #0F8FFF;
+}
+
+a {
+    color: #0F8FFF;
+}
+
+main {
+    border-radius: 8px;   
+}
+
+section {
+    padding: 32px 0;
+}
+
+.section-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-25);
+    margin-bottom: 2rem;
+    
+}
+
+/* .labels-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 4px;
+} */
+
+.labels-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+    padding: 0 0.5rem;
+
+}
+
+.label-container {
+    background-color:#bec9d2; 
+    border-radius: 25rem;
+}
+
+
+.label {
+    font-size: 12px;
+    /* font-weight: 700; */
+    color: var(--white);
+    padding: 2px 16px;
+    border-radius: 32px;
+    width: 100%;
+}
+
+.label .label-percent {
+    color: #FFFFFF;
+    padding: 0.25rem 0.4rem;
+    border-radius: 0.25rem;
+    margin-left: 0.25rem;
+    font-weight: 500;
+
+}
+
+.label-age {
+    background-color: var(--out-age);
+    /* color: var(--in-age); */
+    /* border: 1px solid #FFA2AA; */
+}
+
+.label-gender {
+    background-color: var(--out-gender);
+    /* color: var(--in-gender); */
+    /* border: 1px solid #E8B43C; */
+}
+
+.label-physical {
+    background-color: var(--out-physical);
+    /* color: var(--in-physical); */
+    /* border: 1px solid #A4C94A; */
+}
+
+.label-race {
+    background-color: var(--out-race);
+    /* color: var(--in-race); */
+    /* border: 1px solid #c9b84a; */
+}
+
+.label-religion {
+    background-color: var(--out-religion);
+    /* color: #005BB4; */
+    /* border: 1px solid #6BC7EF ; */
+}
+
+.label-others {
+    background-color: var(--out-other);
+    /* color: #676767; */
+    /* border: 1px solid #D6D6D6; */
+}
+
+.label-percent-age {
+    background-color: var(--in-age);
+    /* border: 1px solid #FFA2AA; */
+}
+
+.label-percent-gender {
+    background-color: var(--in-gender);
+    /* border: 1px solid #E8B43C; */
+}
+
+.label-percent-physical {
+    background-color: var(--in-physical);
+    /* border: 1px solid #A4C94A; */
+}
+
+.label-percent-race {
+    background-color: var(--in-race);
+    /* border: 1px solid #c9b84a; */
+}
+
+.label-percent-religion {
+    background-color: var(--in-religion);
+    /* border: 1px solid #6BC7EF ; */
+}
+
+.label-percent-others {
+    background-color: var(--in-other);
+    /* border: 1px solid #D6D6D6; */
+}
+
+
+.settings-container {
+    background-color: var(--black);
+    color: var(--white);
+    margin-top: 32px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+.settings-item {
+    display: flex;
+    gap: 4px;
+    color: #FFFFFFA0;
+}
+
+.settings-item label {
+    font-size: 12px;
+}
+
+.border-none {
+    border: none;
+}
+
+
+
+/* HTML */
+
+.banner {
+    margin: 32px;
+}
+
+.banner-title {
+    color: var(--black);
+    /* font-size: 18px; */
+}
+

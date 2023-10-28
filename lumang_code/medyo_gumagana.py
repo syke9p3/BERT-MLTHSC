@@ -15,6 +15,8 @@ from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, TrainingArguments, Trainer
 from sklearn.metrics import f1_score, roc_auc_score, accuracy_score
 from transformers import EvalPrediction
+from sklearn.metrics import multilabel_confusion_matrix
+
 
 bert_model = "gklmip/bert-tagalog-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(bert_model)
@@ -40,7 +42,6 @@ print(label2id)
 tweet = dataset['train'][0]
 
 print("Tweet: ", tweet)
-
 
 
 def preprocess_data(examples):
@@ -73,7 +74,7 @@ model = AutoModelForSequenceClassification.from_pretrained(bert_model,
 
 
 batch_size = 8
-metric_name = "f1"
+metric_name = "hamming_loss"
 
 args = TrainingArguments(
     "checkpoint",
@@ -87,7 +88,6 @@ args = TrainingArguments(
     load_best_model_at_end=True,
     metric_for_best_model=metric_name,
 )
-
 
 from sklearn.metrics import hamming_loss, precision_score, recall_score, f1_score
 
@@ -136,19 +136,30 @@ def multi_labels_metrics(predictions, labels, threshold=0.5):
     # finally, compute metrics
     y_true = labels
     #f1 = f1_score(y_true=y_true, y_pred=y_pred, average='macro')
-    roc_auc = roc_auc_score(y_true, y_pred, average = 'macro')
+
+    print("y pred shape: " ,y_pred.shape)
+    print("Y PREDS: \n" ,y_pred)
+
+    print("y true shape: " ,y_true.shape)
+    print("Y TRUE: \n" ,y_true)
+
+    
+    confusion_matrix = multilabel_confusion_matrix(y_true, y_pred)  
+    print(confusion_matrix)
+
     accuracy = accuracy_score(y_true, y_pred)
     hamming = hamming_loss(y_true, y_pred)
 
+
     # return as dictionary
-    metrics = {'roc_auc': roc_auc,
+    metrics = {
                'hamming_loss': hamming,
-               'accuracy': accuracy}
+               'accuracy': accuracy
+    }
 
     return metrics
 
 def compute_metrics(p: EvalPrediction):
-    # If type(p.predictions) = tuple, we take p.predictions[0]; otherwise p.predictions
     preds = p.predictions[0] if isinstance(p.predictions,
             tuple) else p.predictions
     result = multi_labels_metrics(
@@ -166,11 +177,13 @@ trainer = Trainer(
 )
 
 trainer.train()
+print(trainer.evaluate())
+result = trainer.evaluate()
+
+
 trainer.save_model("MLTHSC_BERT")
 print("Trainer Evaluate")
 
-print(trainer.evaluate())
-result = trainer.evaluate()
 
 formatted_result = (
     f"Evaluation Metrics:\n"
@@ -197,7 +210,6 @@ formatted_result += (
 
 print(formatted_result)
 
-from sklearn.metrics import multilabel_confusion_matrix
 from sklearn.preprocessing import label_binarize
 import matplotlib.pyplot as plt
 

@@ -1,8 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from transformers import AutoTokenizer, AutoModel
-import pytorch_lightning as pl
-from pytorch_lightning.loggers import TensorBoardLogger
 from dataset import MLTHSDataModule
 from classifier import MLTHSClassifier
 
@@ -87,7 +84,6 @@ if __name__ == '__main__':
 
     model = MLTHSClassifier(config)
 
-    logger = TensorBoardLogger("lightning_logs", name="mlths")
     trainer = pl.Trainer(logger=logger, max_epochs=config['n_epochs'], num_sanity_val_steps=1, enable_progress_bar=True, log_every_n_steps=10)
     trainer.fit(model, mlths_data_module)
     

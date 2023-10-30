@@ -9,7 +9,8 @@ from sklearn.model_selection import train_test_split
 
 dataset = pd.read_csv('./dataset/mlthsc.csv', nrows=1000)
 
-train_data, test_data = train_test_split(dataset, test_size=0.2, random_state=42)
+train_data, test_data = train_test_split(dataset, test_size=0.4, random_state=42) # 600, 400
+test_data, val_data = train_test_split(test_data, test_size=0.25, random_state=42) # 300, 100
 
 LABELS = ["Age", "Gender", "Physical", "Race", "Religion", "Others"]
 id2label = {idx:label for idx, label in enumerate(LABELS)}
@@ -45,22 +46,22 @@ import torch
 
 # Create a list of encoded examples for train and test data
 encoded_train_data = [preprocess_data(row) for _, row in train_data.iterrows()]
-encoded_test_data = [preprocess_data(row) for _, row in test_data.iterrows()]
+val_data = [preprocess_data(row) for _, row in val_data.iterrows()]
 
 # Combine the encoded examples into a dictionary
 encoded_train_dict = {key: [example[key] for example in encoded_train_data] for key in encoded_train_data[0]}
-encoded_test_dict = {key: [example[key] for example in encoded_test_data] for key in encoded_test_data[0]}
+val_dict = {key: [example[key] for example in val_data] for key in val_data[0]}
 
 # Convert the dictionaries to datasets
 train_dataset = Dataset.from_dict(encoded_train_dict)
-test_dataset = Dataset.from_dict(encoded_test_dict)
+val_dataset = Dataset.from_dict(val_dict)
 
 # Print the first few examples to verify the encoding
 print(train_dataset)
-print(test_dataset)
+print(val_dataset)
 
 print(train_dataset[0])
-print(test_dataset[0])
+print(val_dataset[0])
 
 model = AutoModelForSequenceClassification.from_pretrained(bert_model,
                                                            problem_type="multi_label_classification",
@@ -203,7 +204,7 @@ trainer = Trainer(
     model,
     args,
     train_dataset=train_dataset,
-    eval_dataset=test_dataset,
+    eval_dataset=val_dataset,
     tokenizer=tokenizer,
     compute_metrics=compute_metrics
 )
@@ -220,7 +221,7 @@ print("End time: ", end_time)
 elapsed_time = end_time - start_time
 print(f"Total training time elapsed: {elapsed_time} seconds")
 
-trainer.save_model("model-trial-1")
+trainer.save_model("model-trial-3")
 print("Trainer Evaluate")
 
 print(trainer.evaluate())

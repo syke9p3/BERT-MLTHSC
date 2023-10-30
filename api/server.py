@@ -1,8 +1,7 @@
 from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from gradio_client import Client
-
-import random
+import inference as MLTHSC
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -14,24 +13,15 @@ def hello_world():
 @app.route("/labels", methods=['GET'])
 def get_labels():
 
+    # http://127.0.0.1:5000/labels?input=di%20na%20natauhan%20tong%20mga%20animal%20na%20bakla
+
     input_text = request.args.get('input', '')
     
-    # Generate random probabilities for the labels
-    labels = [
-        {"name": "Age", "probability": f"{random.uniform(0, 100):.2f}%"},
-        {"name": "Gender", "probability": f"{random.uniform(0, 100):.2f}%"},
-        {"name": "Physical", "probability": f"{random.uniform(0, 100):.2f}%"},
-        {"name": "Race", "probability": f"{random.uniform(0, 100):.2f}%"},
-        {"name": "Religion", "probability": f"{random.uniform(0, 100):.2f}%"},
-        {"name": "Others", "probability": f"{random.uniform(0, 100):.2f}%"}
-    ]
-
-    # Sort labels based on probability in descending order
-    labels = sorted(labels, key=lambda x: float(x["probability"][:-1]), reverse=True)
+    labels = MLTHSC.get_predictions(input_text)
     
     data = {
-        "labels": labels,
-        "text": input_text
+        "text": input_text,
+        "labels": labels
     }
     
     return jsonify(data)
@@ -44,7 +34,6 @@ def get_pos_tag():
     input_text = request.args.get('input', '')
 
     client = Client("http://127.0.0.1:7861/")
-    
     
     try:
         result_path = client.predict(input_text, api_name="/predict")

@@ -19,12 +19,36 @@ clearBtn.addEventListener("click", () => {
     inputText.value = ""
     labelsContainer.innerHTML =
         `
-        <div class="label label-age">Age ...</div>
-            <div class="label label-gender">Gender ....</div>
-            <div class="label label-physical">Physical ...</div>
-            <div class="label label-race">Race ....</div>
-            <div class="label label-religion">Religion ...</div>
-            <div class="label label-others">Others ...</div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Age
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Gender
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Physical
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Race
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Religion
+                        </div>
+                    </div>
+                    <div class="label-container">
+                        <div class="label border-none">
+                            <span class="label-percent">0.00%</span>&nbsp;&nbsp;Others
+                        </div>
+                    </div>
         `
 })
 
@@ -42,10 +66,10 @@ function fetchLabels() {
             for (let label of labels) {
                 const probability = parseFloat(label.probability); // Convert string to float
 
-                resultHTML += 
-                `<div class="label-container">
+                resultHTML +=
+                    `<div class="label-container">
                     <div class="label label-${label.name} border-none" style="width: ${probability}%;">
-                    <span class="label-percent-${label.name}">${label.probability}</span>&nbsp;&nbsp;${label.name}
+                    <span class="label-percent label-percent-${label.name}">${label.probability}</span>&nbsp;&nbsp;${label.name}
                     </div>
                 </div>`;
             }

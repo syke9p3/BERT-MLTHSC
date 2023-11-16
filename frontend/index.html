@@ -48,8 +48,11 @@
                 <button class="btn tab">Get Tweet</button>
             </div>
             <textarea type="text" id="input-text" placeholder="Enter text" value=""></textarea>
-            <div class="dev" style="text-align: center;">[ # <b>TODO</b>: Character count: 0/512, Word count: 123 ] </div>
-            <div class="dev" style="text-align: center;">[ # <b>TODO</b>: Pls add input character limit (5 words (?) or 512 chars), disable analyze button if not enough chars ]</div>
+            <div class="dev" style="text-align: center;">
+                Word Count: <text id="word-count" class="dev" style="text-align: center;"> - </text> <br>
+            </div>
+            <div class="dev" style="text-align: center;">Sample Hate Speech: <b>bading tangina ka masahol ka pa sa hayop badjao na feeling banal catholic fuckers kahoy lang yang sinasamba nyo</b> <br> <br></div>
+
             <div class="btn-group flex">
                 <button id="analyze-btn" class="btn btn-primary">Analyze <i class='bx bxs-send'></i></button>
                 <button id="clear-btn" class="btn btn-secondary">Clear</button>

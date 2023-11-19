@@ -88,13 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
     updateWordCount();
 });
 
+function updateTextArea() {
+    var selectedOption = document.getElementById("sample-hate-speech");
+    var textArea = document.getElementById("input-text");
+    textArea.value = selectedOption.value;
+    updateWordCount();
+}
+
 function updateWordCount() {
     const wordCount = inputText.value.trim().split(/\s+/).filter(Boolean).length;
     wordCountElement.textContent = wordCount;
 
     if (wordCount < 3) {
         wordCountElement.style.color = 'red';
+        analyzeBtn.setAttribute("disabled", true);
     } else {
         wordCountElement.style.color = 'black';
+        analyzeBtn.removeAttribute("disabled");
     }
 }
+
+

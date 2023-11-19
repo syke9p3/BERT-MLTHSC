@@ -14,12 +14,6 @@
             <div class="logo"><i class='bx bxs-balloon bx-sm'></i>
                 <h2 class="logo-name">mlthsc.</h2>
             </div>
-            <ul class="nav-list flex">
-                <i class='bx bx-menu bx-sm'></i>
-                <!-- <li class="nav-item">Home</li>
-                <li class="nav-item">About</li>
-                <li class="nav-item">Dataset</li> -->
-            </ul>
         </nav>
     </header>
 
@@ -45,14 +39,23 @@
         <section class="input-set border">
             <div class="flex tabs">
                 <button class="btn tab active">Input Post</button>
-                <button class="btn tab">Get Tweet</button>
             </div>
             <textarea type="text" id="input-text" placeholder="Enter text" value=""></textarea>
             <div class="dev" style="text-align: center;">
                 Word Count: <text id="word-count" class="dev" style="text-align: center;"> - </text> <br>
             </div>
-            <div class="dev" style="text-align: center;">Sample Hate Speech: <b>bading tangina ka masahol ka pa sa hayop badjao na feeling banal catholic fuckers kahoy lang yang sinasamba nyo</b> <br> <br></div>
+            <div class="dev" style="text-align: center;">
+                [ The system accepts a limited number of <strong>3 words</strong>. ]<br>
+            </div>
 
+            <div id="sample-hate-speech-container">
+                <select id="sample-hate-speech" onchange="updateTextArea()">
+                    <option>Select a Sample Hate Speech</option>
+                    <option value="bading tangina ka masahol ka pa sa hayop badjao na feeling banal catholic fuckers kahoy lang yang sinasamba nyo">Example 1</option>
+                    <option value="tangina kang chingchong ka ang baho mong gago ka pakyu">Example 2</option>
+                </select>
+            </div>
+            
             <div class="btn-group flex">
                 <button id="analyze-btn" class="btn btn-primary">Analyze <i class='bx bxs-send'></i></button>
                 <button id="clear-btn" class="btn btn-secondary">Clear</button>
@@ -96,8 +99,6 @@
                     </div>
                 </div>
 
-                <div class="dev" style="text-align: center;">[ # <b>TODO</b>: Pls add for-devs-info/settings ]</div>
-
 
                 <!-- <div class="settings-container">
                     <div class="settings-item ">
@@ -118,10 +119,9 @@
     </section>
 
     <footer>
-        Copyright 2023
+        &copy; 2024 <br> Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT) <br> Saya-ang, Gozum, Hamor, Mabansag <br> All rights reserved.
     </footer>
-
-
+    
     <script src="script.js"></script>
 </body>
 

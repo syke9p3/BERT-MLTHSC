@@ -437,3 +437,46 @@ section {
     /* font-size: 18px; */
 }
 
+#analyze-btn[disabled]{
+    opacity: 20%;
+    cursor: auto;
+}
+
+#sample-hate-speech {
+    margin: 20 0 20 0px;
+    padding: 10px; 
+    font-size: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+#sample-hate-speech option {
+    background-color: #fff; 
+    color: #333; 
+}
+
+#sample-hate-speech::-ms-expand {
+    display: none;
+}
+
+#sample-hate-speech::before {
+    content: '\25BC'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #333; 
+}
+
+#sample-hate-speech-container {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}

@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-model_checkpoint = "model-trial-1"
+model_checkpoint = "model-trial-3"
 trained_model = AutoModelForSequenceClassification.from_pretrained(model_checkpoint)
 tokenizer = AutoTokenizer.from_pretrained("gklmip/bert-tagalog-base-uncased")
 

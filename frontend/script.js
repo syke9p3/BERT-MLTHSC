@@ -199,7 +199,5 @@ function toggleDarkMode() {
 
   textarea.style.color = isDarkMode ? "white" : "black";
 
-  document.getElementById("sample-hate-speech").options[
-    selectedOption
-  ].style.backgroundColor = isDarkMode ? "#333" : "white";
+  /*document.getElementById("sample-hate-speech").options[selectedOption].style.backgroundColor = isDarkMode ? '#333' : 'white';*/
 }

@@ -19,10 +19,14 @@
           <img class="logo-img" src="MLTHSC_logo.png" alt="mlthsc logo" />
           <h2 class="logo-name">mlthsc.</h2>
         </div>
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()" />
+            <label for="dark-mode-toggle"></label>
+        </div>
       </nav>
     </header>
 
-    <main class="container bg-white">
+    <main class="container bg-white" id="main-container">
       <section>
         <div class="fixed text-center">
           <h1 class="banner-title">
@@ -39,7 +43,7 @@
 
       <section class="input-set">
         <div class="flex tabs">
-          <button class="btn tab active">Input Post</button>
+          <button class="btn tab active" id="input-tab">Input Post</button>
         </div>
 
         <div class="input-textbox">
@@ -75,7 +79,7 @@
               >
                 -
               </text>
-              <text> / 280 Words</text>
+              <text class="word-limit"> / 280 Words</text>
             </div>
           </div>
         </div>

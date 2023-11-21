@@ -8,20 +8,6 @@
   --accent: #1ad6ba;
 
   /* labels */
-  /* --out-age: #fe5555;
-    --in-age: #DC2626;
-    --out-gender: #f09f2e;
-    --in-gender: #EA580C;
-    --out-physical: #e9dc27;
-    --in-physical: #d5b903;
-    --out-race: #2bce9a;
-    --in-race: #16a38b;
-    --out-religion: #424bfc;
-    --in-religion: #0f3a97;
-    --out-other: #7f8387;
-    --in-other: #3f3b3b; */
-
-  /* labels */
   --out-age: #fe5555;
   --in-age: #dc2626;
   --out-gender: #f09f2e;
@@ -94,33 +80,20 @@ p {
   font-size: 14;
 }
 
-text {
-  font-size: 12;
-}
-
-/*
-
-Style our app according to the provided design!
-
-green color -> #5f9341
-
-*/
+/* Style our app according to the provided design! */
 
 /* Container Sizes for devices */
 
 .container {
-  /* box-shadow: 0 2px 16px #999da025; */
   margin: 0 auto;
-  padding: 25px; /* Same padding on all sides */
+  padding: 25px;
   max-width: 70%;
 
-  /* Responsive for small devices */
   @media screen and (max-width: 768px) {
     max-width: 100%;
     padding: 15px;
   }
 
-  /* Responsive for very small devices */
   @media screen and (max-width: 480px) {
     max-width: 100%;
     padding: 10px;
@@ -142,11 +115,10 @@ header {
 
 nav {
   padding: 1rem 5%;
-  /* background-color: rgb(218, 218, 218); */
   box-shadow: 0 5px 16px #999da025;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* z-index only works on positioned elements (position:absolute, position:relative, or position:fixed) */
+  position: relative;
   z-index: 10;
 }
 
@@ -172,24 +144,15 @@ i {
   letter-spacing: -1.5;
 }
 
-/* .logo i {
-    color: var(--accent);
-} */
-
 nav ul {
   gap: 1rem;
 }
 
 .input-set {
-  /* margin-bottom: 24px; */
   padding: 0 8px 16px 8px;
 }
 
-/* 
-
-Components 
-
-*/
+/* Components */
 
 /* Input */
 .input-textbox {
@@ -225,7 +188,6 @@ textarea:focus {
   border: none;
   font-weight: bold;
   border-radius: 4px;
-  /* height: 36px; */
   background-color: none;
   cursor: pointer;
   display: flex;
@@ -246,19 +208,6 @@ textarea:focus {
 .btn i {
   color: inherit;
 }
-
-/* .btn-primary {
-  background: var(--black);
-  color: var(--accent);
-}
-
-.btn-tertiary {
-  color: var(--accent);
-  background-color: #ffffff;
-  transition: all 300ms ease;
-  padding: 8px 12px;
-  border: 1px solid var(--accent);
-} */
 
 .btn-clear {
   background-color: firebrick;
@@ -289,11 +238,10 @@ textarea:focus {
 
 .tab.active {
   border-bottom: 3px solid var(--black);
-  cursor: auto; /* remove later */
+  cursor: auto;
 }
 
 .tab.active:hover {
-  /* remove later */
   opacity: 100%;
 }
 
@@ -325,27 +273,13 @@ section {
   padding: 30px 0;
 }
 
-/* Lables */
+/* Labels */
 
 .section-header {
   padding: 0 20px;
   border-bottom: 1px solid var(--gray-25);
   margin: 0 10px 20px 10px;
 }
-
-/* .labels-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 8px;
-}
-
-.label {
-    font-size: 12px;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 4px;
-} */
 
 .labels-container {
   display: flex;
@@ -362,7 +296,6 @@ section {
 
 .label {
   font-size: 12px;
-  /* font-weight: 700; */
   color: var(--white);
   padding: 8px 16px;
   border-radius: 32px;
@@ -379,68 +312,50 @@ section {
 
 .label-age {
   background-color: var(--out-age);
-  /* color: var(--in-age); */
-  /* border: 1px solid #FFA2AA; */
 }
 
 .label-gender {
   background-color: var(--out-gender);
-  /* color: var(--in-gender); */
-  /* border: 1px solid #E8B43C; */
 }
 
 .label-physical {
   background-color: var(--out-physical);
-  /* color: var(--in-physical); */
-  /* border: 1px solid #A4C94A; */
 }
 
 .label-race {
   background-color: var(--out-race);
-  /* color: var(--in-race); */
-  /* border: 1px solid #c9b84a; */
 }
 
 .label-religion {
   background-color: var(--out-religion);
-  /* color: #005BB4; */
-  /* border: 1px solid #6BC7EF ; */
 }
 
 .label-others {
   background-color: var(--out-other);
-  /* color: #676767; */
-  /* border: 1px solid #D6D6D6; */
 }
 
 .label-percent-age {
   background-color: var(--in-age);
-  /* border: 1px solid #FFA2AA; */
 }
 
 .label-percent-gender {
   background-color: var(--in-gender);
-  /* border: 1px solid #E8B43C; */
 }
 
 .label-percent-physical {
   background-color: var(--in-physical);
-  /* border: 1px solid #A4C94A; */
 }
 
 .label-percent-race {
   background-color: var(--in-race);
-  /* border: 1px solid #c9b84a; */
 }
 
 .label-percent-religion {
   background-color: var(--in-religion);
-  /* border: 1px solid #6BC7EF ; */
 }
 
 .label-percent-others {
   background-color: var(--in-other);
-  /* border: 1px solid #D6D6D6; */
 }
 
 .settings-container {
@@ -527,29 +442,120 @@ section {
 /* Footer */
 
 footer {
-  background-color: #333;
-  box-shadow: 0 -3px 16px #999da025;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-.footer_size {
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-.footer-authors span {
-  margin: 0 10px;
-  color: white;
-}
-
-.copyright {
-  opacity: 0.6;
-}
-
-@media (max-width: 768px) {
-  footer {
+    background-color: #333;
+    box-shadow: 0 -3px 16px #999da025;
+    color: #fff;
+    text-align: center;
     padding: 20px;
   }
-}
+  
+  .footer_size {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+  .footer-authors span {
+    margin: 0 10px;
+    color: white;
+  }
+  
+  .copyright {
+    opacity: 0.6;
+  }
+  
+  .dark-mode-toggle {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+  }
+  
+  .dark-mode-toggle label {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 15px;
+      margin-left: 10px;
+  }
+  
+  .dark-mode-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+  
+  .dark-mode-toggle label:before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+  }
+  
+  .dark-mode-toggle input:checked+label:before {
+      transform: translateX(20px);
+      background-color: #333;
+  }
+  
+  .dark-mode {
+      background-image: linear-gradient(180deg, #202020, #202020);
+      color: #ffffff;
+  }
+  
+  .dark-mode-toggle label:before {
+      background-color: #333;
+  }
+  
+  .dark-mode .logo-name, .dark-mode .text-secondary u {
+    color: #39FF14;
+  }
+
+  .dark-mode nav, .dark-mode #main-container, .dark-mode #input-tab, .dark-mode .input-textbox textarea{
+    background-color: #333;
+  }
+  
+  .dark-mode .input-textbox textarea{
+    border: 1px solid #ccc;
+  }
+  .dark-mode #main-container{
+    border-radius: 0;
+  }
+
+  .dark-mode section h1, .dark-mode section p, .dark-mode #input-tab{
+    color: #fff;
+  }
+
+  .dark-mode .word-limit{
+    color: #333;
+  }
+  
+  .dark-mode .btn-analyze {
+    background-color: #4CAF50;
+    box-shadow: #4CAF50;
+  }
+
+  .dark-mode .btn-clear {
+    background-color: #FF5733;
+    color: var(--white);
+  }
+
+  .dark-mode .btn:hover {
+    opacity: 80%;
+    background-color: #4CAF50;
+  }
+
+  .dark-mode .btn-clear:hover {
+    opacity: 80%;
+    background-color: #FF5733;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 20px;
+    }
+  }

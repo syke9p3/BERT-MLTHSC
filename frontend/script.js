@@ -3,12 +3,8 @@ const analyzeBtn = document.getElementById("analyze-btn");
 const clearBtn = document.getElementById("clear-btn");
 const labelsContainer = document.getElementById("labels-container");
 const wordCountElement = document.getElementById("word-count");
-// let savedPosts = [] // TODO: save Posts in a database and fetch from there
 
 analyzeBtn.addEventListener("click", () => {
-  // 1. Send the input to the server (make a get request with url parameters)
-  // 2. fetch then display the results
-
   console.log("Input Text: " + inputText.value);
   fetchLabels();
 });
@@ -16,6 +12,46 @@ analyzeBtn.addEventListener("click", () => {
 clearBtn.addEventListener("click", () => {
   inputText.value = "";
   document.getElementById("sample-hate-speech").selectedIndex = 0;
+  resetLabels();
+  updateWordCount();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const inputElement = document.getElementById("input-text");
+
+  inputElement.addEventListener("input", updateWordCount);
+
+  updateWordCount();
+});
+
+function fetchLabels() {
+  fetch(`http://127.0.0.1:5000/labels?input=${inputText.value}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let labels = data.labels;
+      let resultHTML = "";
+
+      for (let label of labels) {
+        const probability = parseFloat(label.probability); // Convert string to float
+
+        resultHTML += `
+                    <div class="label-container">
+                        <div class="label label-${label.name} border-none" style="width: ${probability}%;">
+                            <span class="label-percent label-percent-${label.name}">${label.probability}</span>&nbsp;&nbsp;${label.name}
+                        </div>
+                    </div>`;
+      }
+
+      labelsContainer.innerHTML = resultHTML;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+function resetLabels() {
   labelsContainer.innerHTML = `
         <div class="label-container">
             <div class="label border-none">
@@ -48,44 +84,7 @@ clearBtn.addEventListener("click", () => {
             </div>
         </div>
     `;
-
-  updateWordCount();
-});
-
-function fetchLabels() {
-  fetch(`http://127.0.0.1:5000/labels?input=${inputText.value}`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-
-      let labels = data.labels;
-      let resultHTML = "";
-
-      for (let label of labels) {
-        const probability = parseFloat(label.probability); // Convert string to float
-
-        resultHTML += `
-                    <div class="label-container">
-                        <div class="label label-${label.name} border-none" style="width: ${probability}%;">
-                            <span class="label-percent label-percent-${label.name}">${label.probability}</span>&nbsp;&nbsp;${label.name}
-                        </div>
-                    </div>`;
-      }
-
-      labelsContainer.innerHTML = resultHTML;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const inputElement = document.getElementById("input-text");
-
-  inputElement.addEventListener("input", updateWordCount);
-
-  updateWordCount();
-});
 
 function updateTextArea() {
   var selectedOption = document.getElementById("sample-hate-speech");
@@ -98,17 +97,31 @@ function updateWordCount() {
   const wordCount = inputText.value.trim().split(/\s+/).filter(Boolean).length;
   wordCountElement.textContent = wordCount;
 
-  if (wordCount === 0) {
-    clearBtn.setAttribute("disabled", "true");
-  } else {
-    clearBtn.removeAttribute("disabled");
-  }
+  clearBtn.disabled = wordCount === 0;
 
   if (wordCount < 3 || wordCount > 280) {
     wordCountElement.style.color = "red";
-    analyzeBtn.setAttribute("disabled", "true");
+    analyzeBtn.disabled = true;
   } else {
     wordCountElement.style.color = "black";
-    analyzeBtn.removeAttribute("disabled");
+    analyzeBtn.disabled = false;
   }
 }
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+function toggleDarkMode() {
+  const isDarkMode = document.body.classList.toggle('dark-mode');
+
+  const selectedOption = document.getElementById("sample-hate-speech").options.selectedIndex;
+  
+  const textarea = document.getElementById("input-text");
+
+  textarea.style.color = isDarkMode ? 'white' : 'black';
+
+  document.getElementById("sample-hate-speech").options[selectedOption].style.backgroundColor = isDarkMode ? '#333' : 'white';
+}
+
+document.getElementById("toggle-dark-mode-btn").addEventListener("click", toggleDarkMode);

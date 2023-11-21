@@ -20,8 +20,12 @@
           <h2 class="logo-name">mlthsc.</h2>
         </div>
         <div class="dark-mode-toggle">
-            <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()" />
-            <label for="dark-mode-toggle"></label>
+          <input
+            type="checkbox"
+            id="dark-mode-toggle"
+            onclick="toggleDarkMode()"
+          />
+          <label for="dark-mode-toggle"></label>
         </div>
       </nav>
     </header>
@@ -95,12 +99,22 @@
       </section>
 
       <section>
-        <div class="flex justify-between align-center section-header">
+        <div
+          class="flex justify-between align-center section-header"
+          style="padding-bottom: 10px"
+        >
           <h4>Labels</h4>
           <!-- <button id="save-btn" class="btn btn-tertiary">
 						<i class="bx bxs-save bx-xs"></i> Save
 					</button> -->
         </div>
+
+        <div id="no-labels-container" style="display: none">
+          <div class="analyze_container result-fade-in">
+            <p>No label identified, please add more words</p>
+          </div>
+        </div>
+
         <div class="labels-container" id="labels-container">
           <div class="label-container">
             <div class="label border-none">
@@ -134,12 +148,16 @@
           </div>
         </div>
 
-        <!-- <div class="settings-container">
-									<div class="settings-item ">
-											<input type="checkbox" name="settings-1" id="settings-1">
-											<label for="settings-1">Hide labels below 50%</label>
-									</div>
-							</div> -->
+        <!-- Add this HTML to your existing code -->
+        <div
+          class="settings-container"
+          id="hide-labels-container"
+          style="display: none"
+        >
+          <button class="btn" id="toggle-labels-btn">
+            Show Labels below 50% <i class="bx bx-chevron-down"></i>
+          </button>
+        </div>
       </section>
     </main>
 

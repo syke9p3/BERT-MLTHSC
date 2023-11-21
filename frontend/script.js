@@ -7,6 +7,8 @@ const toggleLabelsBtn = document.getElementById("toggle-labels-btn");
 const hideLabelsContainer = document.getElementById("hide-labels-container");
 const noLabelsContainer = document.getElementById("no-labels-container");
 
+let allLabelsBelow50 = true;
+
 analyzeBtn.addEventListener("click", () => {
   console.log("Input Text: " + inputText.value);
   showAnalyzingState();
@@ -18,6 +20,10 @@ analyzeBtn.addEventListener("click", () => {
 function showAnalyzingState() {
   labelsContainer.classList.add("fade-out");
   hideLabelsContainer.style.display = "none";
+  noLabelsContainer.style.display = "none";
+  allLabelsBelow50 = true;
+  toggleLabelsBtn.innerHTML =
+    'Show Labels below 50% <i class="bx bx-chevron-down"></i>';
 
   setTimeout(() => {
     labelsContainer.innerHTML = `
@@ -48,8 +54,10 @@ toggleLabelsBtn.addEventListener("click", () => {
     }
   });
 
-  noLabelsContainer.style.display =
-    noLabelsContainer.style.display === "none" ? "block" : "none";
+  if (allLabelsBelow50) {
+    noLabelsContainer.style.display =
+      noLabelsContainer.style.display === "none" ? "block" : "none";
+  }
 
   const buttonText = toggleLabelsBtn.innerHTML.trim();
   toggleLabelsBtn.innerHTML =
@@ -60,7 +68,6 @@ toggleLabelsBtn.addEventListener("click", () => {
 
 function hideLabelsInitially() {
   const labelElements = document.querySelectorAll(".label-container");
-  let allLabelsBelow50 = true;
 
   labelElements.forEach((label) => {
     const labelPercent = label.querySelector(".label-percent");

@@ -1,0 +1,187 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./frontend/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="./frontend/MLTHSC_logo.png" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- Create a SAVE INPUT button with id="analyze-btn" -->
+
+    <header>
+      <nav class="flex">
+        <div class="logo">
+          <!-- <i class='bx bxs-balloon bx-sm'></i> -->
+          <img class="logo-img" src="./frontend/MLTHSC_logo.png" alt="mlthsc logo" />
+          <h2 class="logo-name">mlthsc.</h2>
+        </div>
+        <div class="dark-mode-toggle">
+          <input
+            type="checkbox"
+            id="dark-mode-toggle"
+            onclick="toggleDarkMode()"
+          />
+          <label for="dark-mode-toggle"></label>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container bg-white" id="main-container">
+      <section>
+        <div class="fixed text-center">
+          <h1 class="banner-title">
+            Multilabel Tagalog Hate Speech Classifier
+          </h1>
+          <p class="text-secondary">
+            Enter your hate speech into the textbox below, and then press the
+            "Analyze" button to classify the content according to its relevant
+            labels. Be aware that the system requires a minimum of
+            <u>3 words</u> and accepts up to a maximum of <u>280 words</u>.
+          </p>
+        </div>
+      </section>
+
+      <section class="input-set">
+        <div class="flex tabs">
+          <button class="btn tab active" id="input-tab">Input Post</button>
+        </div>
+
+        <div class="input-textbox">
+          <textarea
+            type="text"
+            id="input-text"
+            placeholder="Enter hate speech here . . ."
+            value=""
+          ></textarea>
+
+          <div class="flex">
+            <div id="sample-hate-speech-container">
+              <select id="sample-hate-speech" onchange="updateTextArea()">
+                <option selected disabled>Select a Sample Hate Speech</option>
+                <option
+                  value="bading tangina ka masahol ka pa sa hayop badjao na feeling banal catholic fuckers kahoy lang yang sinasamba nyo"
+                >
+                  Example 1
+                </option>
+                <option
+                  value="tangina kang chingchong ka ang baho mong gago ka pakyu"
+                >
+                  Example 2
+                </option>
+              </select>
+            </div>
+
+            <div class="dev dev-container">
+              <text
+                id="word-count"
+                class="dev"
+                style="text-align: center; margin-right: 5px"
+              >
+                -
+              </text>
+              <text class="word-limit"> / 280 Words</text>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-group flex">
+          <button id="analyze-btn" class="btn btn-options btn-analyze">
+            Analyze <i class="bx bx-send"></i>
+          </button>
+          <button id="clear-btn" class="btn btn-options btn-clear">
+            Clear <i class="bx bxs-tag-x"></i>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex justify-between align-center section-header"
+          style="padding-bottom: 10px"
+        >
+          <h4>Labels</h4>
+          <!-- <button id="save-btn" class="btn btn-tertiary">
+						<i class="bx bxs-save bx-xs"></i> Save
+					</button> -->
+        </div>
+
+        <div id="no-labels-container" style="display: none">
+          <div class="analyze_container result-fade-in">
+            <p>No label identified, please add more words</p>
+          </div>
+        </div>
+
+        <div class="labels-container" id="labels-container">
+          <div class="label-container">
+            <div class="label border-none">
+              <span class="label-percent">0.00%</span>&nbsp;&nbsp;Age
+            </div>
+          </div>
+          <div class="label-container">
+            <div class="label border-none">
+              <span class="label-percent">0.00%</span>&nbsp;&nbsp;Gender
+            </div>
+          </div>
+          <div class="label-container">
+            <div class="label border-none">
+              <span class="label-percent">0.00%</span>&nbsp;&nbsp;Physical
+            </div>
+          </div>
+          <div class="label-container">
+            <div class="label border-none">
+              <span class="label-percent">0.00%</span>&nbsp;&nbsp;Race
+            </div>
+          </div>
+          <div class="label-container">
+            <div class="label border-none">
+              <span class="label-percent">0.00%</span>&nbsp;&nbsp;Religion
+            </div>
+          </div>
+          <div class="label-container">
+            <div class="label border-none">
+              <span class="label-percent">0.00%</span>&nbsp;&nbsp;Others
+            </div>
+          </div>
+        </div>
+
+        <!-- Add this HTML to your existing code -->
+        <div
+          class="settings-container"
+          id="hide-labels-container"
+          style="display: none"
+        >
+          <button class="btn" id="toggle-labels-btn">
+            Show Labels below 50% <i class="bx bx-chevron-down"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- <section id="saved-post" class="container">
+      <div class="section-header">
+        <h3>Saved Posts</h3>
+        <ul id="list"></ul>
+      </div>
+    </section> -->
+
+    <footer>
+      <p class="footer_size">
+        Multilabel Classification of Tagalog Hate Speech using Bidirectional
+        Encoder Representations from Transformers (BERT) <br />
+      </p>
+
+      <p class="footer_size footer-authors">
+        <span>Saya-ang</span> | <span>Gozum</span> | <span>Hamor</span> |
+        <span>Mabansag</span>
+      </p>
+
+      <p class="footer_size copyright">THESIS PASSERS &copy; 2024 <br /></p>
+    </footer>
+
+    <script src="./frontend/script.js"></script>
+  </body>
+</html>

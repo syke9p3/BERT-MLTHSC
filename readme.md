@@ -9,6 +9,12 @@
 ### Overview
 
 
+### How to run
+
+1. Open /frontend/index.html in the browser
+2. Run server, type: ```py ./api/server.py```
+
+
 ### Methodology
  - #### Hardware Requirements
  - #### Software Requirements

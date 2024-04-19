@@ -1,15 +1,5 @@
 # Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT)
 
-
-
-<p align="center">
-  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg"/>
-  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot2.jpg"/>
-  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot3.jpg"/>
-</p>
-
-
-
 ### Clone with git-lfs
 Since this repo contains large data files (>= 50MB), you need to first download and install a git plugin called git-lfs for versioning large files, and set up Git LFS using command git lfs install in console, in order to fully clone this repo.
 
@@ -42,6 +32,15 @@ Bidirectional Encoder Representations from Transformers (BERT) is pre-trained de
 ### Keywords
 *Bidirectional Encoder Representations from Transformers; Hate Speech; Multilabel Classification; Social Media; Tagalog; Polytechnic University of the Philippines; Bachelor of Science in Computer Science*
 
+### Screenshots
+
+<p align="center">
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg"/>
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot2.jpg"/>
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot3.jpg"/>
+</p>
+
+
 ## Labels
 
 **Multilabel Classification** refers to the task of assigning one or more relevant labels to each text. Each text can be associated with multiple categories simultaneously, such as Age, Gender, Physical, Race, Religion, or Others.
@@ -55,7 +54,7 @@ Bidirectional Encoder Representations from Transformers (BERT) is pre-trained de
 | ![Religion](https://img.shields.io/badge/Religion-424BFC)   | Target of of hate speech pertains to affiliation, belief, and faith to any of the existing religious or non-religious groups |
 | ![Others](https://img.shields.io/badge/Others-65696C)   | Target of of hate speech pertains other topic that is not relevant as Age, Gender, Physical, Race, or Religion |
 
-# Dataset
+## Dataset
 2,116 scraped social media posts from Facebook, Reddit, and Twitter manually annotated for determining labels for each data split into three sets: 
 
 | Dataset        | Number of Posts | Percentage |
@@ -64,7 +63,7 @@ Bidirectional Encoder Representations from Transformers (BERT) is pre-trained de
 | Validation Set | 212             | 10%        |
 | Testing Set    | 633             | 30%        |
 
-# Results
+## Results
 
 The testing set containing 633 annotated hate speech data used to analyze performance of the model in its ability to classify the hate speech input according to different label in terms of Precision, Recall, F-Measure, and overall hamming loss.
 

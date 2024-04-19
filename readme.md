@@ -1,5 +1,8 @@
 # Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT)
 
+## Clone with git-lfs
+Since this repo contains large data files (>= 50MB), you need to first download and install a git plugin called git-lfs for versioning large files, and set up Git LFS using command git lfs install in console, in order to fully clone this repo.
+
 ## Proponents: 
 - Saya-ang, Kenth G. (@syke9p3)
 - Gozum, Denise Julianne S. (@Xenoxianne)
@@ -14,9 +17,6 @@ Hate speech encompasses expressions and behaviors that promote hatred, discrimin
 
 ## Keywords
 *Bidirectional Encoder Representations from Transformers; Hate Speech; Multilabel Classification; Social Media; Tagalog; Polytechnic University of the Philippines; Bachelor of Science in Computer Science*
-
-## Clone with git-lfs
-Since this repo contains large data files (>= 50MB), you need to first download and install a git plugin called git-lfs for versioning large files, and set up Git LFS using command git lfs install in console, in order to fully clone this repo.
 
 ## Labels
 

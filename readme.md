@@ -1,5 +1,14 @@
 # Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT)
 
+# Screenshots
+
+<p align="center">
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg"/>
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot2.jpg"/>
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot3.jpg"/>
+</p>
+
+
 
 ### Clone with git-lfs
 Since this repo contains large data files (>= 50MB), you need to first download and install a git plugin called git-lfs for versioning large files, and set up Git LFS using command git lfs install in console, in order to fully clone this repo.
@@ -69,13 +78,5 @@ The testing set containing 633 annotated hate speech data used to analyze perfor
 | Others   | 83.74%    | 85.12% | 84.43%    |
 
 Overall Hamming Loss: 3.79%
-
-# Screenshots
-
-<p align="center">
-  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg"/>
-  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot2.jpg"/>
-  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot3.jpg"/>
-</p>
 
 

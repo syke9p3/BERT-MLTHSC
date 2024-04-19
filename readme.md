@@ -1,6 +1,6 @@
 # Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT)
 
-# Screenshots
+
 
 <p align="center">
   <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg"/>

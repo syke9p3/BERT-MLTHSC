@@ -1,11 +1,10 @@
 # Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT)
 
 
-## Guide
-
 ### Clone with git-lfs
 Since this repo contains large data files (>= 50MB), you need to first download and install a git plugin called git-lfs for versioning large files, and set up Git LFS using command git lfs install in console, in order to fully clone this repo.
 
+<!--
 ### How to run 
 
 Follow the following steps:
@@ -13,6 +12,8 @@ Follow the following steps:
 1. Clone this repository to your local machine
 1. Open *./index.html* in the browser
 2. In the terminal, type: ```py ./server.py``` 
+
+-->
 
 ## Overview
 

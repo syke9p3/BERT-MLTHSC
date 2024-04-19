@@ -56,7 +56,11 @@ The testing set containing 633 annotated hate speech data used to analyze perfor
 Overall Hamming Loss: 3.79%
 
 # Screenshots
-![Screenshot1](https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg)
-![Screenshot2](https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot2.jpg)
-![Screenshot3](https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot3.jpg)
+
+<p align="center">
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot1.jpg"/>
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot2.jpg"/>
+  <img src="https://github.com/syke9p3/BERT-MLTHSC/blob/53f323953aba4dc6dc70e34e7eec3f29acbc3e02/Screenshot3.jpg"/>
+</p>
+
 

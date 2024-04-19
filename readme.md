@@ -42,7 +42,7 @@ Since this repo contains large data files (>= 50MB), you need to first download 
 
 # Results
 
-The testing set containing 633 annotated hate speech data used to analyze performance of the model in its ability to classify the hate speech input according to different label in terms of precision, recall f-measure, and overall hamming loss.
+The testing set containing 633 annotated hate speech data used to analyze performance of the model in its ability to classify the hate speech input according to different label in terms of Precision, Recall, F-Measure, and overall hamming loss.
 
 | Label    | Precision | Recall | F-Measure |
 |----------|-----------|--------|-----------|

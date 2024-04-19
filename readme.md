@@ -15,21 +15,20 @@ Follow the following steps:
 
 -->
 
-## Overview
 
-### Proponents
+## Proponents
 - Saya-ang, Kenth G. (@syke9p3)
 - Gozum, Denise Julianne S. (@Xenoxianne)
 - Hamor, Mary Grizelle D. (@mnemoria)
 - Mabansag, Ria Karen B. (@riavx)
 
-### Description
+## Description
 
 This repository contains source files for the thesis titled, **Multilabel Classification of Tagalog Hate Speech using Bidirectional Encoder Representations from Transformers (BERT)**, at the Polytechnic University of the Philippines. The model classifies a hate speech according to one or more categories: Age, Gender, Physical, Race, Religion, and Others. 
 
 Hate speech encompasses expressions and behaviors that promote hatred, discrimination, prejudice, or violence against individuals or groups based on specific attributes, with consequences ranging from physical harm to psychological distress, making it a critical issue in today's society. 
 
-## Keywords
+### Keywords
 *Bidirectional Encoder Representations from Transformers; Hate Speech; Multilabel Classification; Social Media; Tagalog; Polytechnic University of the Philippines; Bachelor of Science in Computer Science*
 
 ## Labels

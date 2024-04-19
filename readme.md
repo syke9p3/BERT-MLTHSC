@@ -32,7 +32,7 @@ Since this repo contains large data files (>= 50MB), you need to first download 
 | ![Others](https://img.shields.io/badge/Others-65696C)   | Target of of hate speech pertains other topic that is not relevant as Age, Gender, Physical, Race, or Religion |
 
 # Dataset
-2,116 scraped social media posts fromFacebook, Reddit, and Twitter manually annotated for determining labels for each data split into three sets: 
+2,116 scraped social media posts from Facebook, Reddit, and Twitter manually annotated for determining labels for each data split into three sets: 
 
 | Dataset        | Number of Posts | Percentage |
 |----------------|-----------------|------------|

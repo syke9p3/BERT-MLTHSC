@@ -48,11 +48,11 @@ Bidirectional Encoder Representations from Transformers (BERT) is pre-trained de
 | Label                                                        | Description                                                                                                      |
 |--------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | ![Age](https://img.shields.io/badge/Age-FE5555)             | Target of hate speech pertains to one's age bracket or demographic |
-| ![Gender](https://img.shields.io/badge/Gender-F09F2D)       | Target of hate speech is related to gender identity, sex, or sexual orientation |
+| ![Gender](https://img.shields.io/badge/Gender-F09F2D)       | Target of hate speech pertains to gender identity, sex, or sexual orientation |
 | ![Physical](https://img.shields.io/badge/Physical-FFCC00)   | Target of hate speech pertains to physical attributes or disability |
-| ![Race](https://img.shields.io/badge/Race-2BCE9A)   | Target of of hate speech pertains to racial background, ethnicity, or nationality |
-| ![Religion](https://img.shields.io/badge/Religion-424BFC)   | Target of of hate speech pertains to affiliation, belief, and faith to any of the existing religious or non-religious groups |
-| ![Others](https://img.shields.io/badge/Others-65696C)   | Target of of hate speech pertains other topic that is not relevant as Age, Gender, Physical, Race, or Religion |
+| ![Race](https://img.shields.io/badge/Race-2BCE9A)   | Target of hate speech pertains to racial background, ethnicity, or nationality |
+| ![Religion](https://img.shields.io/badge/Religion-424BFC)   | Target of hate speech pertains to affiliation, belief, and faith to any of the existing religious or non-religious groups |
+| ![Others](https://img.shields.io/badge/Others-65696C)   | Target of hate speech pertains other topic that is not relevant as Age, Gender, Physical, Race, or Religion |
 
 ## Dataset
 2,116 scraped social media posts from Facebook, Reddit, and Twitter manually annotated for determining labels for each data split into three sets: 
